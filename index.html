@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="/css/index.css">
+<body>
+<head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+</head>
+<h3 id="title"> Hóa đơn thanh toán </h3>
+ <a href= "/update-form.html" > Cập nhật số điện, nước </a>
+
+<div>
+  <div id="user-info">
+    <form action="">
+      <label for="room-no" id="select-room"> Phòng</label>
+      <select id="room-no" name="room-no">
+        <option value="">-</option>
+        <option value="P01">P1</option>
+        <option value="P02">P2</option>
+        <option value="P03">P3</option>
+        <option value="P04">P4</option>
+        <option value="P05">P5</option>
+        <option value="P06">P6</option>
+        <option value="P07">P7</option>
+        <option value="P08">P8</option>
+        <option value="P09">P9</option>
+        <option value="P10">P10</option>
+        <option value="P11">P11</option>
+        <option value="P12">P12</option>
+        <option value="P13">P13</option>
+        <option value="P14">P14</option>
+      </select>
+      <!-- <label id="rental-name-label">Tên người thuê: </label> -->
+     <!--  <label type="text" id="rental-name" name="rental-name" > Ngô Thành Đạt</label> -->
+  
+      <br>
+      
+      <label id="rental-date-label">Tháng  </label>
+      <label type="text" id="" name="month" > </label>
+      <select id="month" >
+        <option value="">-</option>
+        <option value="01">Tháng 1</option>
+        <option value="02">Tháng 2</option>
+        <option value="03">Tháng 3</option>
+        <option value="04">Tháng 4</option>
+        <option value="05">Tháng 5</option>
+        <option value="06">Tháng 6</option>
+        <option value="07">Tháng 7</option>
+        <option value="08">Tháng 8</option>
+        <option value="09">Tháng 9</option>
+        <option value="10">Tháng 10</option>
+        <option value="11">Tháng 11</option>
+        <option value="12">Tháng 12</option>
+      </select>
+
+       <label id="rental-date-label">Năm  </label>
+      <label type="text" id="" name="year" > </label>
+      <select id="year">
+        <option value="">-</option>
+        <option value="2021"> 2021 </option>
+        <option selected value="2022"> 2022 </option>
+        <option value="2023"> 2023</option>
+        <option value="2024"> 2024</option>
+        <option value="2025"> 2025</option>
+        <option value="2026"> 2026</option>
+        <option value="2027"> 2027</option>
+        <option value="2028"> 2028</option>
+        <option value="2029"> 2029</option>
+        <option value="2030"> 2030</option>
+      </select>
+ 
+  
+
+      <input  type="checkbox" id="internet-checkbox">
+      <label> Internet </label><br>
+ 
+      <br>
+      <br>
+  </div>
+
+  <div>
+    <table id="table">
+      <tr> 
+        <th rowspan="2" id= "elec-row-span" > Điện</th>
+        <th>Số mới</th>
+        <th>Số cũ</th>
+        <th>Sử dụng (kWh)</th>
+        <th>Đơn giá</th>
+        <th>Thành tiền</th>
+      </tr>
+      <tr>
+        <td><input type ="text" id="elec-new-input" onkeypress="return allowOnlyNumber(event)"></td>
+        <td id="elec-old-value">0</td>
+        <td id="elec-used"></td>
+        <td id="elec-price">20,000</td>
+        <td id="elec-total-price">0</td>
+      </tr>
+      </table>
+  </div>
+      
+  
+      <div>
+        <table id="table">
+          <tr> 
+            <th rowspan="2" id= "water-row-span">Nước</th>
+            <th>Số mới</th>
+            <th>Số cũ</th>
+            <th>Sử dụng (m3 - khối) </th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+          </tr>
+          <tr>
+            <td> <input type ="text" onkeypress="return allowOnlyNumber(event)" id="water-new-input"></td>
+            <td  id="water-old-value" >0</td>
+            <td  id="water-used"></td>
+            <td  id="water-price">4,000</td>
+            <td  id="water-total-price">0</td>
+          </tr>
+        </table>
+      </div>
+  
+      <div>
+        <table id="table">
+          <tr> 
+            <th id="room-price-label">Giá phòng</th>
+            <td id="room-price-value"> <input type="text" id = "room-price-input"> </td>
+          </tr>
+        </table>
+      </div>
+
+      <div hidden class = "internet">
+        <table id="table">
+          <tr> 
+            <th id="internet-price-label">Internet</th>
+            <td id="internet-price-value"> <input disabled type="text" id = "internet-price-input" value="50000"> </td>
+          </tr>
+        </table>
+      </div>
+  
+      <div>
+        <table id="table">
+          <tr> 
+            <th id="other-price-label">Phát sinh khác</th>
+            <td id="other-price-value">
+              <input type="text" id="other-input"> 
+            </td>
+          </tr>
+        </table>
+      </div>
+  
+      <div>
+        <table id="table">
+          <tr> 
+            <th id="room-price-label">Tổng cộng</th>
+            <td id="room-price-value"> <input id="total" type="text" value="0" disabled ></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id= "buttons">
+        <span id = "print-bill" onclick='printBill()'> 
+          <i class="fas fa-print" >In hóa đơn </i>
+        </span>
+
+        <span id = "save" onclick='saveBill()'> 
+          <i class="fas fa-save" > Lưu</i>
+        </span>
+      </div>
+</div>
+
+</div>
+<script src="/js/index.js"></script>
+<script src="/js/Api.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+

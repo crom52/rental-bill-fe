@@ -1,0 +1,134 @@
+
+
+
+  <!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="/css/index.css">
+<body>
+<head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.6/jquery.inputmask.bundle.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+</head>
+
+<a href = "/">Thanh toán hóa đơn</a>
+ <div id="user-info">
+    <form action="">
+      <label for="room-no" id="select-room"> Phòng</label>
+      <select id="room-no" name="room-no">
+        <option value="">-</option>
+        <option value="P01">P1</option>
+        <option value="P02">P2</option>
+        <option value="P03">P3</option>
+        <option value="P04">P4</option>
+        <option value="P05">P5</option>
+        <option value="P06">P6</option>
+        <option value="P07">P7</option>
+        <option value="P08">P8</option>
+        <option value="P09">P9</option>
+        <option value="P10">P10</option>
+        <option value="P11">P11</option>
+        <option value="P12">P12</option>
+        <option value="P13">P13</option>
+        <option value="P14">P14</option>
+      </select>
+    <!--   <label id="rental-name-label">Tên người thuê: </label> -->
+     <!--  <label type="text" id="rental-name" name="rental-name" > Ngô Thành Đạt</label> -->
+  
+      <br>
+      
+      <label id="rental-date-label">Tháng  </label>
+      <label type="text" id="" name="month" > </label>
+      <select id="month" required>
+        <option value="">-</option>
+        <option value="01">Tháng 1</option>
+        <option value="02">Tháng 2</option>
+        <option value="03">Tháng 3</option>
+        <option value="04">Tháng 4</option>
+        <option value="05">Tháng 5</option>
+        <option value="06">Tháng 6</option>
+        <option value="07">Tháng 7</option>
+        <option value="08">Tháng 8</option>
+        <option value="09">Tháng 9</option>
+        <option value="10">Tháng 10</option>
+        <option value="11">Tháng 11</option>
+        <option value="12">Tháng 12</option>
+      </select>
+
+      <label id="rental-date-label" >Năm  </label>
+      <label type="text" id="" name="year" > </label>
+      <select id="year">
+        <option value="">-</option>
+        <option value="2021"> 2021 </option>
+        <option selected value="2022"> 2022 </option>
+        <option value="2023"> 2023</option>
+        <option value="2024"> 2024</option>
+        <option value="2025"> 2025</option>
+        <option value="2026"> 2026</option>
+        <option value="2027"> 2027</option>
+        <option value="2028"> 2028</option>
+        <option value="2029"> 2029</option>
+        <option value="2030"> 2030</option>
+      </select>
+ 
+      <br>
+      <br>
+  </div>
+  <br>
+ <form>
+
+    <div style = "margin-left: 20px; width: 160px;  ">
+        <label for="old-elec-val">Số điện cũ: </label>
+         <a id="old-elec-val"> </a>
+    </div>
+
+    <div style = "margin-left: 20px; width: 160px; ">
+        <label for="new-elec-val">Số điện mới</label><br>
+        <input type="text" id="new-elec-val" style = "width:150px">
+    </div>
+    <br>
+
+    <div style = "margin-left: 20px; width: 160px">
+        <label for="old-water-val">Số nước cũ: </label>
+         <a id= "old-water-val"></a>
+    </div>
+
+    <div  style = "margin-left: 20px; width: 160px;">
+        <label for="new-water-val">Số nước mới</label> <br>
+        <input type="text" id="new-water-val"  style = "width:150px" >
+    </div>
+
+</form>
+
+</div>
+
+   
+
+    <div  style ="margin-left: 20px; width: 160px" >
+        <label for="rental-price-label">Giá phòng</label><br>
+        <input type="text" id="rental-price"  style = "width:150px">
+    </div>
+  </form>
+  
+  <div style="float:left; margin-left: 25px; margin-top: 20px" id= "buttons">
+    <span id = "update-bill"  onclick="saveBill()"> 
+      <i class="fas fa-save">Cập nhật</i>
+    </span>
+
+  </div>
+
+</div>
+<script src="/js/UpdateForm.js"></script>
+<script src="/js/Api.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
